@@ -63,7 +63,7 @@ static void	sighandler(int signum, siginfo_t *info, void *context)
 int	main(void)
 {
 	pid_t				pid_s;
-	struct sigaction	sa;
+	static struct sigaction	sa;
 
 	sa.sa_sigaction = sighandler;
 	sa.sa_flags = SA_SIGINFO;
